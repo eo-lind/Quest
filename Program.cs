@@ -79,6 +79,30 @@ namespace Quest
             {
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
             }
+
+            Console.WriteLine("Would you like to play again (y:n)?");
+            string playAgainAnswer = Console.ReadLine();
+            if (playAgainAnswer == "y")
+            {
+                foreach (Challenge challenge in challenges) {
+                    challenge.RunChallenge(theAdventurer);
+                }
+
+                if (theAdventurer.Awesomeness >= maxAwesomeness)
+                {
+                    Console.WriteLine("YOU DID IT! You are truly awesome!");
+                }
+                else if (theAdventurer.Awesomeness <= minAwesomeness)
+                {
+                    Console.WriteLine("Get out of my sight. Your lack of awesomeness offends me!");
+                }
+                else
+                {
+                    Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+                }
+            
+            }
+            else { }
         }
     }
 }
