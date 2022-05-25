@@ -52,7 +52,7 @@ namespace Quest
 
             return $"Adventurer, {Name}, is {status}";
         }
-
+        // method:
         public string GetDescription()
         {
             return $"{Name} is wearing a {ColorfulRobe.Length}-inch,  {string.Join(", ", ColorfulRobe.Colors)} robe and a hat with a shininess level of {UserHat.ShininessDescription(UserHat.ShininessLevel)}";
