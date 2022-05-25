@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Quest
 {
     // An instance of the Adventurer class is an object that will undergo some challenges
@@ -13,10 +16,14 @@ namespace Quest
         public int Awesomeness { get; set; }
 
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer(string name)
+        public Robe ColorfulRobe { get; } = new Robe();
+        public Hat UserHat { get; } = new Hat();
+        public Adventurer(string name, Robe robe, Hat hat)
         {
             Name = name;
             Awesomeness = 50;
+            ColorfulRobe = robe;
+            UserHat = hat;
         }
 
 
@@ -44,6 +51,11 @@ namespace Quest
             }
 
             return $"Adventurer, {Name}, is {status}";
+        }
+        // method:
+        public string GetDescription()
+        {
+            return $"{Name} is wearing a {ColorfulRobe.Length}-inch,  {string.Join(", ", ColorfulRobe.Colors)} robe and a hat with a shininess level of {UserHat.ShininessDescription(UserHat.ShininessLevel)}";
         }
     }
 }
